@@ -17,7 +17,7 @@ function App() {
   }
 
   const removeContact = (c1) => {
-    setContacts(contacts.filter((c2) => c1.id != c2.id));
+    setContacts(contacts.filter((c2) => c1.id !== c2.id));
   }
 
   return (
