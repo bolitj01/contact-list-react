@@ -23,7 +23,7 @@ function App() {
   return (
     <>
       <AddContact addContact={addContact}></AddContact>
-      <ViewContacts title={"Contact List"} contacts={contacts} removeContact={removeContact}></ViewContacts>
+      <ViewContacts title={"New Title"} contacts={contacts} removeContact={removeContact}></ViewContacts>
     </>
   );
 }
