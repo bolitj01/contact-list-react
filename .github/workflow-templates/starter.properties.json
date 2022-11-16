@@ -1,0 +1,13 @@
+{
+    "name": "My Exciting Workflow Starter",
+    "description": "It's a good start! Now add to it.",
+    "iconName": "starter-icon",
+    "categories": [
+        "JavaScript"
+    ],
+    "filePatterns": [
+        "package.json$",
+        "^Dockerfile",
+        ".*\\.md$"
+    ]
+}
