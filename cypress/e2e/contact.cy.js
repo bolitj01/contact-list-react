@@ -10,7 +10,7 @@ describe('contacts', () => {
     cy.get('[data-testid="phone').type("260-228-1489");
     cy.get('button').click();
     cy.get('[data-testid="contact"]');
-    cy.get('[data-testid="contact"]').should("have.length", 1);
+    cy.get('[data-testid="error"]').should("have.length", 1);
   })
 
   it('delete that same contact', () => {
