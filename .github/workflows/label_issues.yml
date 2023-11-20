@@ -1,0 +1,16 @@
+name: Issue Labeler
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  add-label:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Label the issue
+      uses: actions/labeler@v3
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        # Path to configuration file
+        configuration-path: .github/label_rules.yml
