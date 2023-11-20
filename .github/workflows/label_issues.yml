@@ -1,16 +1,53 @@
-name: Issue Labeler
+# name: Issue Labeler
 
+# on:
+#   issues:
+#     types: [opened]
+
+# jobs:
+#   # add-label:
+#   #   runs-on: ubuntu-latest
+#   #   steps:
+#   #   - name: Label the issue
+#   #     uses: actions/labeler@v3
+#   #     with:
+#   #       repo-token: ${{ secrets.GITHUB_TOKEN }}
+#   #       # Path to configuration file
+#   #       configuration-path: .github/label_rules.yml
+#   add-label:
+#     runs-on: ubuntu-latest
+#     permissions:
+#       issue: write
+#     steps:
+#       uses: actions/github-script@v6
+#       with:
+#         script: |
+#           github.rest.issues.addLabels({
+#             issues_number: context.issue.number,
+#             owner: context.repo.owner,
+#             repo: context.repo.repo,
+#             labels: ['Needs Assignment']
+#           })
+
+name: Label issues
 on:
   issues:
-    types: [opened]
-
+    types:
+      - reopened
+      - opened
 jobs:
-  add-label:
+  label_issues:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     steps:
-    - name: Label the issue
-      uses: actions/labeler@v3
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        # Path to configuration file
-        configuration-path: .github/label_rules.yml
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ["Needs Assignment"]
+            })
+
