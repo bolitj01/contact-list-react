@@ -20,9 +20,7 @@ describe('contacts', () => {
     
   })
 
-  /* ==== Test Created with Cypress Studio ==== */
   it('add another user and delete', function() {
-    /* ==== Generated with Cypress Studio ==== */
     cy.visit('/');
     cy.get('[data-testid="name"]').type('jim');
     cy.get('[data-testid="phone"]').type('2602221489');
@@ -30,6 +28,5 @@ describe('contacts', () => {
     cy.get('[data-testid="contact"] > :nth-child(1)').should('have.text', 'jim');
     cy.get('[data-testid="contact"] > :nth-child(2)').should('have.text', '2602221489');
     cy.get('[data-testid="contact"] > :nth-child(3)').should('have.text', 'Delete');
-    /* ==== End Cypress Studio ==== */
   });
 })
