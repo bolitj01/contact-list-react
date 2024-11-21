@@ -2,8 +2,6 @@ import React from 'react';
 
 const ViewContacts = ({ title, contacts, removeContact}) => {
 
-    // props.contacts
-
     return (
         <>
             <h1>{title}</h1>
